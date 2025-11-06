@@ -1,4 +1,7 @@
-# Program # 2: Car Class
+# Auther: Joseph Kracht
+# Last Modified: 11/4/2025
+# Title: Car Class
+
 # Write a class named Car that has the following data attributes:
 
 # __year_model (for the car's year model)
@@ -12,3 +15,32 @@
 # The brake method should subtract 5 from the speed data attribute each time it is called.
 # The get_speed method should return the current speed.
 # Next, design a program that creates a Car object then calls the accelerate method five times.  After each call to the accelerate method, get the current speed of the car and display it.  The call the brake method.  After each call to the brake method, get the current speed of the car and display it.
+
+class Car:
+    def __init__(self, year, model, make):
+        self.year = year
+        self.model = model
+        self.make = make
+        self.speed = 0
+
+    def accelerate(self):
+        self.speed += 5
+
+    def brake(self):
+        self.speed -= 5
+
+    def get_speed(self):
+        return self.speed
+
+
+my_car = Car(2006, "Caravan", "Dodge")
+
+# accelerate the car
+for i in range(5):
+    my_car.accelerate()
+    print("The cars speed is", my_car.get_speed())
+
+# stop the car
+for i in range(5):
+    my_car.brake()
+    print("The cars speed is", my_car.get_speed())
